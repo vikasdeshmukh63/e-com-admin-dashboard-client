@@ -5,6 +5,9 @@ import userImg from "../assets/userImg.png";
 import { HiTrendingUp, HiTrendingDown } from "react-icons/hi";
 import React from "react";
 import dummyData from "../assets/data.json";
+import { BarChart, DoughnutChart } from "../components/Charts";
+import { BiMaleFemale } from "react-icons/bi";
+import Table from "../components/DashboardTable";
 
 const Dashboard = () => {
   return (
@@ -32,6 +35,14 @@ const Dashboard = () => {
           <div className="revenueChart">
             <h2>Revenue & Transaction</h2>
             {/* graph here  */}
+            <BarChart
+              data_1={[300, 144, 433, 655, 237, 755, 190]}
+              data_2={[200, 444, 556, 778, 455, 555, 654]}
+              title_1="Revenue"
+              title_2="Transaction"
+              bgColor_1="rgb(0,115,255)"
+              bgColor_2="rgba(53,162,235,0.8)"
+            />
           </div>
           <div className="dashboardCategories">
             <h2>Inventory</h2>
@@ -41,6 +52,20 @@ const Dashboard = () => {
               })}
             </div>
           </div>
+        </section>
+
+        <section className="transactionContainer">
+          <div className="genderChart">
+            <h2>Gender Ratio</h2>
+            {/* Chart  */}
+            <DoughnutChart labels={["Female", "Male"]} data={[12, 19]} backgroundColor={["hsl(340,82%,56%)", "rgba(53,162,235,0.8)"]} cutout={90} />
+            <p>
+              <BiMaleFemale />
+            </p>
+          </div>
+
+          {/* table  */}
+          <Table data={dummyData.transaction}/>
         </section>
       </main>
     </div>
