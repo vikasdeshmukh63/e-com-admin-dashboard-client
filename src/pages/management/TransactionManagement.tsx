@@ -35,19 +35,42 @@ const TransactionManagement = () => {
 
   const { name, address, city, country, state, pinCode, subtotal, shippingCharges, tax, discount, total, status } = order;
 
+  const updateHandler = () => {
+    setOrder((prev)=>({
+      ...prev,
+      status:prev.status === "Processing" ? "Shipped" :"Delivered"
+    }))
+  }
+
   return (
     <div className="adminContainer">
       <AdminSidebar />
       <main className="productManagement">
-        <section>
+        <section style={{padding:"2rem"}}>
           <h2>Order Items</h2>
           {order.orderItems.map((item) => (
             <ProductCard name={item.name} _id={item._id} photo={item.photo} price={item.price} quantity={item.quantity} key={item._id} />
           ))}
         </section>
 
-        <article>
-          
+        <article className="shippingInfoCard">
+          <h1>Order Info</h1>
+          <h5>User Info</h5>
+          <p>Name: {name}</p>
+          <p>Address: {`${address}, ${city}, ${state}, ${country} ${pinCode}`}</p>
+
+          <h5>Amount Info</h5>
+          <p>Subtotal: ${subtotal}</p>
+          <p>Shipping Charges: ${shippingCharges}</p>
+          <p>Tax: ${tax}</p>
+          <p>Discount: ${discount}</p>
+          <p>Total: ${total}</p>
+
+          <h5>Status Info</h5>
+          <p>
+            Status: <span className={status === "Delivered" ? "purple" : status === "Shipped" ? "green" : "red"}>{status}</span>
+          </p>
+          <button onClick={updateHandler}>Process Status</button>
         </article>
       </main>
     </div>

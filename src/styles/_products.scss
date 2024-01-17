@@ -120,6 +120,40 @@
             }
         }
     }
+
+    .shippingInfoCard {
+
+        >h1 {
+            text-align: center;
+            @include heading(2px);
+        }
+
+        >h5 {
+            margin: 2rem 0 0 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 700
+        }
+
+        >p{
+            margin:0.5rem;
+        }
+
+        >button{
+            margin: 2rem 0;
+            padding: 1rem;
+            border: none;
+            background-color: rgb(5, 107, 224);
+            color: white;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1.1rem;
+            cursor: pointer;
+
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+    }
 }
 
 .transactionProductCard {
@@ -131,7 +165,7 @@
         border-radius: 5px;
     }
 
-    >span{
+    >span {
         margin-left: auto;
     }
 }
