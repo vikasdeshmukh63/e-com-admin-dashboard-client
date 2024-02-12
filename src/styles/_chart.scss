@@ -11,6 +11,12 @@
         width: 80%;
         margin: 4rem auto;
 
+        >h2 {
+            margin: 2rem 0;
+            text-align: center;
+            @include heading(2px);
+        }
+
         >div {
             max-width: 25rem;
             margin: auto;
