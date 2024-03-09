@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Loader = () => {
   return (
-    <div>
-      Loading...
-    </div>
-  )
-}
+    <section className="loader">
+      <div/>
+    </section>
+  );
+};
 
-export default Loader
+export default Loader;

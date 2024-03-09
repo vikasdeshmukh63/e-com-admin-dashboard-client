@@ -37,7 +37,7 @@ export const sidebarItems: SidebarItems[] = [
     section: "Apps",
     items: [
       { title: "Stopwatch", Icon: FaStopwatch, url: "/admin/apps/stopwatch" },
-      { title: "Coupon", Icon: RiCoupon3Fill, url: "/admin/apps/coupon" },
+      { title: "Coupon", Icon: RiCoupon3Fill, url: "/admin/apps/coupoun" },
       { title: "Toss", Icon: FaGamepad, url: "/admin/apps/toss" },
     ],
   },
